@@ -1,0 +1,116 @@
+* {
+  box-sizing: inherit;
+}
+
+.nav--wrapper {
+  position: relative;
+  padding: 0 11px;
+  box-sizing: border-box;
+}
+
+.navi--context {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  position: relative;
+  font-size: 0;
+}
+.js .navi--context {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.js .navi--context::-webkit-scrollbar {
+  display: none;
+}
+
+.navi--contents {
+  float: left;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+  position: relative;
+}
+
+.navi--contents--no--transition {
+  transition: none;
+}
+
+.navi--link {
+  text-decoration: none;
+  color: #888;
+  font-size: 1.2rem;
+  font-family: -apple-system, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border: 1px solid transparent;
+  padding: 0 11px;
+}
+
+.navi--link + .navi--link {
+  border-left-color: #eee;
+}
+
+.navi--link[aria-selected="true"] {
+  color: #111;
+}
+
+.move--setup {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.move--setup:focus {
+  outline: 0;
+}
+
+.move--setup:hover {
+  cursor: pointer;
+}
+
+.left--move {
+  left: 0;
+}
+
+[data-overflowing="both"] ~ .left--move, [data-overflowing="left"] ~ .left--move {
+  opacity: 1;
+}
+
+.right--move {
+  right: 0;
+}
+
+[data-overflowing="both"] ~ .right--move, [data-overflowing="right"] ~ .right--move {
+  opacity: 1;
+}
+
+.arrow--icon {
+  width: 20px;
+  height: 44px;
+  fill: #bbb;
+}
+
+.navi--indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100px;
+  background-color: transparent;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+  transition: transform .2s ease-in-out, background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
